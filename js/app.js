@@ -18,7 +18,7 @@ App.IndexController = Ember.ArrayController.extend({
   sortProperties: ['idx'],
 
   updateSortOrder: function(indexes) {
-    this.forEach(function(item) {
+    this.get('model').forEach(function(item) {
       var index = indexes[item.get('id')];
       item.set('idx', index);
     }, this);
